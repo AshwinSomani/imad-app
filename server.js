@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 app.get('/terminal-one',function(req,res){
-   res.send("Prachi I Love U"); 
+     res.sendFile(path.join(__dirname, 'ui', 'ashwin.html'));
 });
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
