@@ -8,21 +8,21 @@ app.use(morgan('combined'));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('terminal-1',function(req,res){
+app.get('terminal-one',function(req,res){
    res.send("Prachi I Love U"); 
 });
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-app.get('terminal-2',function(req,res){
+app.get('terminal-two',function(req,res){
    res.send("Prachi I wanna kiss U"); 
 });
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('terminal-3',function(req,res){
+app.get('terminal-three',function(req,res){
    res.send("Prachi I wanna fuck U"); 
 });
 
