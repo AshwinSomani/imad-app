@@ -17,7 +17,7 @@ var terminal_one={
                     ..prachi i luv uprachi i luv u...prachi i luv uprachi i luv u...prachi i luv uprachi i luv uprachi i luv uprachi i luv u..prachi i luv uprachi i luv u
                     </p>
                     <p>
-                    ..prachi i luv uprachi i luv u...prachi i luv uprachi i luv u...prachi i luv uprachi i luv uprachi i luv uprachi i luv u..prachi i luv uprachi i luv u
+                    ..prachi i luv uprachi i luv u...prachi i luv uprachi i luv u...prachi i luv uprachi i luv uprachi i luv uprachi i luvu..prachi i luv uprachi i luv u
                     </p>
                     <p>
                     ..prachi i luv uprachi i luv u...prachi i luv uprachi i luv u...prachi i luv uprachi i luv uprachi i luv uprachi i luv u..prachi i luv uprachi i luv u
