@@ -19,4 +19,13 @@ body {
 .img-medium {
     height: 200px;
 }
-
+ .ashwin{
+    max-width: 700px;
+    margin: 0 auto;
+    color: red;
+    font-family: sans-serief;
+    padding-top: 100px;
+    background-color: wheat;
+    padding-left: 10px;
+    padding-right: 10px;
+        }
