@@ -8,7 +8,9 @@ app.use(morgan('combined'));
 
 
 
-var terminal_one={
+
+var terminal={   
+'terminal_one':{
     title:'HELLOPAPA',
     date:'18.12.1998',
     heading:'terminal-one',
@@ -23,6 +25,20 @@ var terminal_one={
                     ..prachi i luv uprachi i luv u...prachi i luv uprachi i luv u...prachi i luv uprachi i luv uprachi i luv uprachi i luv u..prachi i luv uprachi i luv u
                     </p>    
                 `
+
+},
+'terminal_two':{
+    title:'Helloashwin',
+    date:'12.12.1997',
+    heading:'terminal-two',
+    content:'Hello here is ashwin somani'
+},
+'terminal_three':{
+    title:'Helloashwinsomani',
+    date:'12.12.2016',
+    heading:'terminal-three',
+    content:'Hello here is ashwin somani...hows u'
+}
 };
 function somaniji(data){
     var date=data.date;
@@ -70,22 +86,16 @@ var HtmlCodes=`
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/terminal-one',function(req,res){
-    res.send(somaniji(terminal_one));
+app.get('/:terminalName',function(req,res){
+    var terminalName=req.params.terminalName;
+    res.send(somaniji(terminal[terminalName]));
 });
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-app.get('/terminal-two',function(req,res){
-   res.send("Prachi I wanna kiss U"); 
-});
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
-});
-
-app.get('/terminal-three',function(req,res){
-   res.send("Prachi I wanna fuck U"); 
 });
 
 // Do not change port, otherwise your app won't run on IMAD servers
