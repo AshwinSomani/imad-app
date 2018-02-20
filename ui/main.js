@@ -5,3 +5,6 @@ var img=document.getElementById("ash");
 img.onclick=function(){
   img.style.marginLeft="1120px";  
 };
+img.onclick=function(){
+  img.style.marginTop="300px";  
+};
