@@ -4,7 +4,7 @@ element.innerHTML="HELLO";
 var img=document.getElementById("ash");
 var rightmargin=0;
 function rightSide(){
-    rightmargin=10;
+    rightmargin=rightmargin+10;
     img.style.marginLeft=rightmargin+"px";
 }
 img.onclick=function(){
