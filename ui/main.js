@@ -4,7 +4,7 @@ element.innerHTML="HELLO";
 var img=document.getElementById("ash");
 img.onclick=function(){
   img.style.marginLeft="1120px";
-if(img.setonclickListener===true){
+if(img.setOnClickListener===true){
   img.style.marginRight="300px";  
 }
 };
