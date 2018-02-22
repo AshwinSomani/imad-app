@@ -1,13 +1,7 @@
-console.log('Loaded!');
-var element=document.getElementById("ashwin");
-element.innerHTML="HELLO";
-var img=document.getElementById("ash");
-var rightmargin=0;
-function rightSide(){
-    rightmargin=rightmargin+10;
-    img.style.marginLeft=rightmargin+"px";
-}
-img.onclick=function(){
-var interval=setInterval(rightSide,100);
-
+var button=document.getElementById("counter");
+var counter=0;
+button.onclick=function(){
+    counter++;
+    var span=document.getElementById("count");
+    span.innerHTML=counter.toString();
 };
