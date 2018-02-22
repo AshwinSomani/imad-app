@@ -92,7 +92,7 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-app.get('/ashwin',function(req,res){
+app.get('ashwin',function(req,res){
   
    res.send("hello");
 });
