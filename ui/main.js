@@ -11,9 +11,6 @@ button.onclick=function(){
             }
         }
     };
-    counter++;
-    var span=document.getElementById("count");
-    span.innerHTML=counter.toString();
     request.open('GET','http://somaniashwin1998.imad.hasura-app.io/counter');
     request.send(null);
 };
