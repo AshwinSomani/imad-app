@@ -84,6 +84,9 @@ var HtmlCodes=`
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+app.get('/counter',function(req,res){
+   res.send("Hello"); 
+});
 app.get('/:terminalName',function(req,res){
     var terminalName=req.params.terminalName;
     res.send(somaniji(terminal[terminalName]));
