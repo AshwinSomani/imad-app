@@ -11,6 +11,6 @@ button.onclick=function(){
             }
         }
     };
-    request.open('GET','http://somaniashwin1998.imad.hasura-app.io/counter');
+    request.open('GET','http://somaniashwin1998.imad.hasura-app.io/counter',true);
     request.send(null);
 };
