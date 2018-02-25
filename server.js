@@ -84,8 +84,10 @@ var HtmlCodes=`
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+var counter=0;
 app.get('/counter',function(req,res){
-   res.send("Hello"); 
+    counter++;
+    res.send(counter);
 });
 app.get('/:terminalName',function(req,res){
     var terminalName=req.params.terminalName;
