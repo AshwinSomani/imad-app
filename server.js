@@ -87,7 +87,7 @@ app.get('/', function (req, res) {
 var counterc=0;
 app.get('/counter',function(req,res){
     counterc++;
-    res.send(counterc);
+    res.send(counterc.toString());
 });
 app.get('/:terminalName',function(req,res){
     var terminalName=req.params.terminalName;
