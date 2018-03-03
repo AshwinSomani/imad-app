@@ -16,7 +16,7 @@ var config={
 
 
 var terminal={   
-'terminal_one':{
+'terminal-one':{
     title:'HELLOPAPA',
     date:'18.12.1998',
     heading:'terminal-one',
