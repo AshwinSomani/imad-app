@@ -117,7 +117,7 @@ app.get("/test-db",function(req,res){
         }
     });
 });
-    app.get('/terminal/:terminalNAME',function(req,res){
+    app.get('/terminal/:terminalName',function(req,res){
        pool.query("Select * FROM article where title = '"+req.params.terminalNAME + "'",function(err,result){
            if(err){
                    res.status(500).send(err.toString());
