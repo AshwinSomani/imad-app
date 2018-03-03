@@ -11,10 +11,6 @@ var config={
   port:'5432',
   password:process.env.DB_PASSWORD
 };
-
-
-
-
 var terminal={   
 'terminal-one':{
     title:'HELLOPAPA',
