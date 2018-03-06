@@ -9,7 +9,7 @@ var bodyParser=require('body-parser');
 var pool=new Pool(config);
 var config={
   user:'somainashwin1998',
-  host:'db.imad.hasura-app.io',
+  host:'somaniashwin.imad.hasura-app.io',
   database:'somaniashwin1998',
   port:'5432',
   password:process.env.DB_PASSWORD
@@ -90,7 +90,7 @@ var HtmlCodes=`
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-var counterc=0;
+var counter=0;
 app.get('/counter',function(req,res){
     counterc++;
     res.send(counterc.toString());
