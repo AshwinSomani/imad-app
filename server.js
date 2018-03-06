@@ -6,6 +6,7 @@ var app = express();
 var crypto=require('crypto');
 app.use(morgan('combined'));
 var bodyParser=require('body-parser');
+var pool=new Pool(config);
 var config={
   user:'somainashwin1998',
   host:'db.imad.hasura-app.io',
@@ -121,7 +122,7 @@ app.get('/ashwin',function(req,res){
     
     res.send("hello");
 });
-var pool=new Pool(config);
+
 app.get("/test-db",function(req,res){
     pool.query("select * FROM test",function(err,result){
         if(err){
