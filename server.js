@@ -105,21 +105,6 @@ app.get('/ashwin',function(req,res){
     
     res.send("hello");
 });
-app.post('/create-user',function(req,res){
-    var password=req.body.password;
-    var username=req.body.username;
-    var salt=crypto.getRandomBytes(128).toString("hex");
-    var dbString=hash(password,salt);
-    pool.query("INSERT INTO 'USER' (username,password) VALUES ($1,$2)",[username,dbString],function(err,result){
-        if(err){
-            res.status(500).send(err.toString());
-        }
-        else{
-            res.send("USER SUCESSFULLY CREATED"+username);
-        }
-    });
-    
-});
 var pool=new Pool(config);
 app.get("/test-db",function(req,res){
     pool.query("select * FROM test",function(err,result){
