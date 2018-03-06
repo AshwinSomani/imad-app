@@ -4,7 +4,9 @@ var path = require('path');
 var Pool=require("pg").Pool;
 var app = express();
 var crypto=require('crypto');
+var bodyParser=require("bodyParser");
 app.use(morgan('combined'));
+app.use(bodyParser.json());
 var config={
   user:'somainashwin1998',
   host:'db.imad.hasura-app.io',
@@ -102,6 +104,21 @@ app.get('/ui/madi.png', function (req, res) {
 app.get('/ashwin',function(req,res){
     
     res.send("hello");
+});
+app.post('/create-user',function(req,res){
+    var password=req.body.password;
+    var username=req.body.username;
+    var salt=crypto.getRandomBytes(128).toString("hex");
+    var dbString=hash(password,salt);
+    pool.query("INSERT INTO 'USER' (username,password) VALUES ($1,$2)",[username,dbString],function(err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            res.send("USER SUCESSFULLY CREATED"+username);
+        }
+    });
+    
 });
 var pool=new Pool(config);
 app.get("/test-db",function(req,res){
