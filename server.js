@@ -13,6 +13,7 @@ var config={
   port:'5432',
   password:process.env.DB_PASSWORD
 };
+app.use(bodyParser.json());
 var terminal={   
 'terminal-one':{
     title:'HELLOPAPA',
@@ -100,6 +101,22 @@ app.get('/ui/main.js', function (req, res) {
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
+app.post('/create-user',function(req,res){
+    var password=req.body.password;
+    var username=req.body.username;
+    var salt=crypto.getRandomBytes(128).toString("hex");
+    var dbString=hash(password,salt);
+    pool.query("INSERT INTO 'USER' (username,password) VALUES ($1,$2)",[username,dbString],function(err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            res.send("USER SUCESSFULLY CREATED"+username);
+        }
+    });
+    
+});
+
 app.get('/ashwin',function(req,res){
     
     res.send("hello");
