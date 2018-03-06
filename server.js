@@ -5,7 +5,7 @@ var Pool=require("pg").Pool;
 var app = express();
 var crypto=require('crypto');
 app.use(morgan('combined'));
-var bodyParser=require("bodyParser");
+var bodyParser=require('bodyParser');
 var config={
   user:'somainashwin1998',
   host:'db.imad.hasura-app.io',
