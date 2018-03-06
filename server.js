@@ -6,7 +6,7 @@ var app = express();
 var crypto=require('crypto');
 var bodyParser=require("bodyParser");
 app.use(morgan('combined'));
-app.use(bodyParser.json());
+
 var config={
   user:'somainashwin1998',
   host:'db.imad.hasura-app.io',
