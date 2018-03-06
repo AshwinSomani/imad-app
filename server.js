@@ -104,7 +104,7 @@ app.get('/ui/madi.png', function (req, res) {
 app.post('/create-user',function(req,res){
     var password=req.body.password;
     var username=req.body.username;
-    var salt=crypto.getrandomBytes(128).toString("hex");
+    var salt=crypto.randomBytes(128).toString("hex");
     var dbString=hash(password,salt);
     pool.query("INSERT INTO 'USER' (username,password) VALUES ($1,$2)",[username,dbString],function(err,result){
         if(err){
