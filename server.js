@@ -118,8 +118,8 @@ function hash(input,salt){
     var hashed=crypto.pbkdf2Sync(input,salt,100000, 64, 'sha512');
     return hashed.toString("hex");
 }
-app.get('/hash',function(req,res){
-   var hashstring=hash(hash.params.input,"this -is -some-random-string");
+app.get('/hash/:input',function(req,res){
+   var hashstring=hash(req.params.input,"this -is -some-random-string");
    res.send(hashstring);
 });
     app.get('/terminal/:terminalName',function(req,res){
