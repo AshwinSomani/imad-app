@@ -12,7 +12,7 @@ var config={
   database:'somaniashwin1998',
   host:'db.imad.hasura-app.io',
   port:'5432',
-  password:process.env.DB_PASSWORD
+  password:'db-somaniashwin1998-59690'
 };
 var pool=new Pool(config);
 function hash(input,salt){
