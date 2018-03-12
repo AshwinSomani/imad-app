@@ -6,7 +6,7 @@ var app = express();
 var crypto=require('crypto');
 app.use(morgan('combined'));
 var bodyParser=require('body-parser');
-var pool=new Pool(config);
+
 var config={
   user:'somainashwin1998',
   database:'somaniashwin1998',
@@ -14,6 +14,7 @@ var config={
   port:'5432',
   password:process.env.DB_PASSWORD
 };
+var pool=new Pool(config);
 function hash(input,salt){
     var hashed=crypto.pbkdf2Sync(input,salt,10000, 512, 'sha512');
     return ['pbkdf2Sync','10000', salt,hashed.toString("hex")].join('$');
