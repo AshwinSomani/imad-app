@@ -12,7 +12,7 @@ var config={
   database:'somaniashwin1998',
   host:'db.imad.hasura-app.io',
   port:'5432',
-  password:'db-somaniashwin1998-59690'
+  password:process.env.DB_PASSWORD
 };
 var pool=new Pool(config);
 function hash(input,salt){
@@ -110,9 +110,9 @@ app.get('/ui/madi.png', function (req, res) {
 app.post('/create-user',function(req,res){
     var password=req.body.password;
     var username=req.body.username;
-    var salt=crypto.randomBytes(128).toString("hex");
-    var dbString=hash(password,salt);
-    pool.query("INSERT INTO 'user' (username,password) VALUES ($1,$2)",[username,dbString],function(err,result){
+    //var salt=crypto.randomBytes(128).toString("hex");
+    //var dbString=hash(password,salt);
+    pool.query("INSERT INTO 'user' (username,password) VALUES ($1,$2)",[username,password],function(err,result){
         console.log(result);
         if(err){
             res.status(500).send(err.toString());
